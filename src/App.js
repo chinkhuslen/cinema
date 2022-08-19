@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import "./style.css";
-import Zahial from './zahial.jsx'
+import BuyTicket from './buyTicket.jsx'
 import Home from './home.jsx'
 import { ButtonProvider } from "./contextButton";
 // Import the functions you need from the SDKs you need
@@ -38,14 +38,14 @@ export default function App() {
             
           <Link to="/"><div>Coming soon</div></Link>
             
-          <Link to="/zahial"><div>Захиалах</div> </Link>
+          <Link to="/buyTicket"><div>Захиалах</div> </Link>
             
           <Link to="/"><div>Үнэ урамшуулал</div> </Link>
           </div>
         </nav>
         <Routes>
           <Route path="/" element={<Home/>}></Route>
-          <Route path="/zahial" element={<Zahial/>}>
+          <Route path="/buyTicket" element={<BuyTicket/>}>
           </Route>
         </Routes>
       </div>

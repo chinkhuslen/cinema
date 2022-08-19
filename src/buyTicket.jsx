@@ -1,5 +1,5 @@
 import { useButtonContext } from "./contextButton";
-const Zahial = () => {
+const BuyTicket = () => {
     const { isClicked, setIsClicked } = useButtonContext();
     return (
         <div className="Ticket">
@@ -19,7 +19,7 @@ const Zahial = () => {
                                 <h3>{el.locationName}</h3>
                                 <div className="flex flexWrap">
                                     {el.time.map((el2) => {
-                                        return (<div className="availableTime">{el2}</div>)
+                                        return (<div className="availableTime" >{el2}</div>)
                                     })}
                                 </div>
                             </div>
@@ -30,4 +30,4 @@ const Zahial = () => {
         </div>
     )
 }
-export default Zahial
+export default BuyTicket

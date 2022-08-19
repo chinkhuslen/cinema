@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import "./style.css";
-import zurag from "./img/zurag.jpeg"
 import { useButtonContext } from "./contextButton";
 import data from './data.json'
 const Home = () => {
@@ -17,7 +16,7 @@ const Home = () => {
                                 <img src={el.img} />
                                 <div className="movLength">{el.lengthOfMovie}</div>
                             </div>
-                            <Link to='/zahial'> <button onClick={() => { setIsClicked(el) }} className="moviePosterBtn" >Дэлгэрэнгүй / Захиалах</button> </Link>
+                            <Link to='/buyTicket'> <button onClick={() => { setIsClicked(el) }} className="moviePosterBtn" >Дэлгэрэнгүй / Захиалах</button> </Link>
                         </div>
                     );
                 })}

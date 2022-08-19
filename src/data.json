@@ -1,0 +1,94 @@
+[
+    {
+        "name": "BulletTrain",
+        "id": "1",
+        "desc": "Five assassins aboard a fast moving bullet train find out their missions have something in common.",
+        "genre": "Action",
+        "img": "https://www.urgoo.mn/Files/FilmPosterGraphic/HO00001114.jpg",
+        "lengthOfMovie": "126 min",
+        "locationAndTime": [
+            {
+                "locationName": "Urgoo_2",
+                "time": [
+                    "13:20",
+                    "16:00",
+                    "18:40",
+                    "21:20"
+                ]
+            },
+            {
+                "locationName": "Urgoo_4",
+                "time": [
+                    "13:20",
+                    "16:00",
+                    "18:40",
+                    "21:20"
+                ]
+            },
+            {
+                "locationName": "Urgoo_6",
+                "time": [
+                    "13:20",
+                    "16:00",
+                    "18:40",
+                    "21:20"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "ThorLoveAndThunder",
+        "id": "2",
+        "desc": "Thor enlists the help of Valkyrie, Korg and ex-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct.",
+        "genre": "Action",
+        "img": "https://www.urgoo.mn/Files/FilmPosterGraphic/HO00001051.jpg",
+        "lengthOfMovie": "119 min",
+        "locationAndTime": [
+            {
+                "locationName": "Urgoo_1",
+                "time": [
+                    "13:20",
+                    "16:00",
+                    "18:40",
+                    "21:20"
+                ]
+            },
+            {
+                "locationName": "Urgoo_2",
+                "time": [
+                    "13:20",
+                    "16:00",
+                    "18:40",
+                    "21:20"
+                ]
+            },
+            {
+                "locationName": "Urgoo_3",
+                "time": [
+                    "13:20",
+                    "16:00",
+                    "18:40",
+                    "21:20"
+                ]
+            },
+            {
+                "locationName": "Urgoo_4",
+                "time": [
+                    "13:20",
+                    "16:00",
+                    "18:40",
+                    "21:20"
+                ]
+            },
+            {
+                "locationName": "Urgoo_6",
+                "time": [
+                    "13:20",
+                    "16:00",
+                    "18:40",
+                    "21:20"
+                ]
+            }
+        ]
+    }
+]

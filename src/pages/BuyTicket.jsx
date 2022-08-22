@@ -1,8 +1,12 @@
 import { useButtonContext } from "../provider/contextButton";
 import TicketTime from './TicketTime.jsx'
+import TicketNumber from './TicketNumber.jsx'
+import TicketSeat from './TicketSeat.jsx'
+import TicketFinal from './TicketFinal.jsx'
+import TicketPayment from './TicketPayment.jsx'
+import TicketQR from './TicketQR.jsx'
 const BuyTicket = () => {
-    const { currentMovie, setCurrentMovie } = useButtonContext();
-
+    const { currentMovie } = useButtonContext();
     return (
         <div className="Ticket">
             <div className="ticketLeft">
@@ -14,8 +18,14 @@ const BuyTicket = () => {
                 <div className="ticketRightDiv"><b>Genre :</b> {currentMovie.genre}</div>
                 <div className="ticketRightDiv"><b>Length :</b> {currentMovie.lengthOfMovie}</div>
                 <div className="timeTable ticketRightDiv">
-                    <TicketTime/>
+                      <TicketTime/>
+                      <TicketNumber/>
+                      <TicketSeat/>
+                      <TicketFinal/>
+                      <TicketPayment/>
+                      <TicketQR/>
                 </div>
+
             </div>
         </div>
     )

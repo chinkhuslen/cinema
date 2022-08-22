@@ -29,6 +29,35 @@ ul,li,a{
     justify-content: center;
     transition: all .3s ease;
 }
+.active{
+    display: block;
+}
+.border1px{
+    border: 1px solid;
+}
+.box50{
+    width: 50px;
+    height: 50px;
+}
+.box25{
+    width: 25px;
+    height: 25px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+.box25:hover{
+    background-color: cyan;
+}
+.buyTicketBtn{
+    width: 80px !important;
+    margin: 5px 10px 5px 0;
+}
+.dispNone{
+    display: none;
+}
+.activeTicketSeat{
+    background-color: cyan;
+}
 .navBtns a:hover{
     background-color: black;
     color: white;
@@ -40,6 +69,10 @@ ul,li,a{
     width: 80%;
     margin-top: 10px;
     margin-left: 10%;
+}
+.qr{
+    width: 150px;
+    height: 150px;
 }
 .flex{
     display: flex;

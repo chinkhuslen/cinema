@@ -16,7 +16,7 @@ const TicketPayment = () => {
       </div>
       <div className="ticketRightDiv flex">
                 <button onClick={()=> setTicketBtn('step4')}> Back </button>
-                <button  onClick={()=> setTicketBtn('step6')}>Checkout </button>
+                <button  onClick={()=> setTicketBtn('step6')}> Finish </button>
             </div>
     </span>
   );

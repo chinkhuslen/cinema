@@ -11,6 +11,7 @@ const TicketPayment = () => {
   return (
     <span className={ticketBtn == "step6" ? "active" : "dispNone"}>
       <div>
+        <h1>Thank you!</h1>
         <div className="center">Social Pay<img className="qr" src={social}/></div>
         <div className="center">TDB Pay<img className="qr" src={tdb}/></div>
       </div>

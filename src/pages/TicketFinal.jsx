@@ -6,7 +6,6 @@ const TicketFinal = () => {
     const {ticketCount } = useButtonContext();
     const {ticketSeat } = useButtonContext();
     const {ticketBtn,setTicketBtn } = useButtonContext();
-    console.log(ticketSeat)
   return (
     <span className={ticketBtn == "step4" ? "active" : "dispNone"}>
       <div>

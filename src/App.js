@@ -4,25 +4,37 @@ import "./style.css";
 import BuyTicket from './pages/BuyTicket.jsx'
 import Home from './pages/Home.jsx'
 import { ButtonProvider } from "./provider/contextButton";
-// // Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAvgO3zjGmUonvUpExUy4L8ZXzjJcYK7ZI",
-//   authDomain: "cinema-ch.firebaseapp.com",
-//   projectId: "cinema-ch",
-//   storageBucket: "cinema-ch.appspot.com",
-//   messagingSenderId: "625690063199",
-//   appId: "1:625690063199:web:ea3fd84865f79aab6706ea",
-//   measurementId: "G-281X4WFEFG"
-// };
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc, getDocs,where,query } from "firebase/firestore";
 
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAvgO3zjGmUonvUpExUy4L8ZXzjJcYK7ZI",
+  authDomain: "cinema-ch.firebaseapp.com",
+  projectId: "cinema-ch",
+  storageBucket: "cinema-ch.appspot.com",
+  messagingSenderId: "625690063199",
+  appId: "1:625690063199:web:ea3fd84865f79aab6706ea",
+  measurementId: "G-281X4WFEFG"
+};
+
+const cinemaData = async () =>{
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  
+  try {
+    const querySnapshot = await getDocs(query(collection(db, "currentMovies"))); 
+    querySnapshot.forEach((doc) => {
+      console.log(doc.data());
+    });
+    } catch (error) {
+      console.error(error)
+    }
+}
+// cinemaData()
 
 export default function App() {
   return (
@@ -34,9 +46,9 @@ export default function App() {
           <div><h1>Chinkhuslen's Cinema</h1></div>
           <div className="navBtns">
           <Link to="/"><div>Эхлэл</div></Link>
-          <Link to="/"><div>Coming soon</div></Link>
           <Link to="/BuyTicket"><div>Захиалах</div> </Link>
           <Link to="/"><div>Үнэ урамшуулал</div> </Link>
+          <Link to="/"><div>Log-In</div></Link>
           </div>
         </nav>
         <Routes>

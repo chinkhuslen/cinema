@@ -12,7 +12,7 @@ const TicketNumber = () => {
             </div>
             <div className="ticketRightDiv flex">
                 <button className={ticketTime != null ? "active  buyTicketBtn" : "dispNone"} onClick={()=> setTicketBtn('')}> Back </button>
-                <button className={ticketTime != null ? "active  buyTicketBtn" : "dispNone"} onClick={()=> setTicketBtn('step3')}> Next </button>
+                <button className={ticketTime != null ? "active  buyTicketBtn" : "dispNone"} onClick={() => (ticketCount.adult > 0 || ticketCount.child > 0) ? setTicketBtn('step3') : alert("Enter ticket number")}> Next </button>
             </div>
         </span>
     )

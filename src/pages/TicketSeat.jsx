@@ -5,7 +5,7 @@ const TicketSeat = () => {
   const { ticketSeat, setTicketSeat } = useButtonContext();
   const arr = new Array(10).fill(new Array(10).fill(0));
   const seatReserve = (el,i,j)=>{
-
+    
     el.getAttribute('seatstatus') == 'notFree' ? alert("not free. choose different seat"):setTicketSeat([...ticketSeat,{row:i,col:j}]);
     el.classList.toggle('activeTicketSeat');
     el.setAttribute('seatstatus', el.getAttribute('seatstatus') == 'pending' ? 'free':'pending');

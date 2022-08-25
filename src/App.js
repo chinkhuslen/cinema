@@ -5,8 +5,6 @@ import BuyTicket from './pages/BuyTicket.jsx'
 import Home from './pages/Home.jsx'
 import { ButtonProvider } from "./provider/contextButton";
 
-// cinemaData()
-
 export default function App() {
   return (
 

@@ -12,10 +12,10 @@ const firebaseConfig = {
   measurementId: "G-281X4WFEFG"
 };
 
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 const cinemaData = async () =>{
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  
   try {
     const querySnapshot = await getDocs(query(collection(db, "currentMovies"))); 
     querySnapshot.forEach((doc) => {
@@ -26,13 +26,20 @@ const cinemaData = async () =>{
     }
 }
 const addDataToFire = async (userData, ticketTime, ticketName, ticketNumber, ticketSeat) =>{
-    const docId = "Pacp6oBobadKwX5jIACr"
     try {
-        const docRef = await doc(db, 'users', docId);
-
-        updateDoc(docRef, {
-         user   
+        const docRef = await addDoc(collection(db, 'currentMovies'));
+        await updateDoc(docRef, {
+          ...userData,
+          order:{
+            ...ticketName,
+            ...ticketTime,
+            ...ticketNumber,
+            seat:{
+              ...ticketSeat
+            }
+          }
         })
+        console.log("doc id: " + docRef.id)
     } catch (error) {
         console.log(error)
     }

@@ -2,6 +2,7 @@ import { createContext, useContext, useState } from "react";
 
 const ButtonContext = createContext();
 
+
 export const ButtonProvider = ({ children }) => {
     const [currentMovie, setCurrentMovie] = useState('');
     const [ticketTime, setTicketTime] = useState('');
@@ -16,3 +17,4 @@ export const ButtonProvider = ({ children }) => {
     )
 }
 export const useButtonContext = () => useContext(ButtonContext)
+

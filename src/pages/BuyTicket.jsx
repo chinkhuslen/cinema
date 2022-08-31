@@ -1,4 +1,5 @@
 import { useButtonContext } from "../provider/contextButton";
+import { useUserDataContext } from "../provider/contextUserData";
 import TicketTime from './TicketTime.jsx'
 import TicketNumber from './TicketNumber.jsx'
 import TicketSeat from './TicketSeat.jsx'
@@ -7,6 +8,7 @@ import TicketPayment from './TicketPayment.jsx'
 import TicketQR from './TicketQR.jsx'
 const BuyTicket = () => {
     const { currentMovie } = useButtonContext();
+    const { userEntered } = useUserDataContext();
     return (
         <div className="Ticket">
             <div className="ticketLeft">

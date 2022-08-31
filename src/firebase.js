@@ -1,6 +1,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs,where,query, updateDoc,doc } from "firebase/firestore";
+import { getAuth, RecaptchaVerifier,signInWithPhoneNumber } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAvgO3zjGmUonvUpExUy4L8ZXzjJcYK7ZI",
@@ -13,35 +14,70 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth();
 const db = getFirestore(app);
 
-const cinemaData = async () =>{
-  try {
-    const querySnapshot = await getDocs(query(collection(db, "currentMovies"))); 
-    querySnapshot.forEach((doc) => {
-      console.log(doc.data());
-    });
-    } catch (error) {
-      console.error(error)
-    }
+
+// ------------------OTP avah heseg------------------------
+const generateRecaptcha = () => {
+  window.recaptchaVerifier = new RecaptchaVerifier(
+    'recaptcha-container',
+    {
+      size: 'invisible',
+      callback: (response) => {},
+    },
+    auth
+  );
+};
+
+export const sendOTP = async (enteredPhone) =>{
+  let phoneNumber = '+976' + enteredPhone; 
+  generateRecaptcha();
+  const appVerifier = window.recaptchaVerifier;
+  
+  signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+      .then((confirmationResult) => {
+        console.log(confirmationResult)
+        // SMS sent. Prompt user to type the code from the message, then sign the
+        // user in with confirmationResult.confirm(code).
+        window.confirmationResult = confirmationResult;
+        // ...
+      }).catch((error) => {
+        // Error; SMS not sent
+        // ...
+      });
+
 }
-const addDataToFire = async (userData, ticketTime, ticketName, ticketNumber, ticketSeat) =>{
+// ------------------OTP shalgah heseg------------------------
+
+export const checkOTP = async (enteredCode) =>{
+  let confirmationResult = window.confirmationResult;
+  confirmationResult.confirm(enteredCode).then((result)=>{
+    alert("success")
+    return true;
+  })
+  .catch((error)=> {
+    console.log(error);
+    alert("fail")
+    return false;
+  })
+}
+// ----------------------------zahialga nemeh----------------------------------------------------
+export const addDataToFire = async (userData, ticketTime, ticketName, ticketNumber, ticketSeat) =>{
     try {
-        const docRef = await addDoc(collection(db, 'currentMovies'));
-        await updateDoc(docRef, {
+        const docRef = await addDoc(collection(db, 'users'),{
           ...userData,
           order:{
-            ...ticketName,
+            name:ticketName,
             ...ticketTime,
             ...ticketNumber,
             seat:{
               ...ticketSeat
             }
           }
-        })
+        });
         console.log("doc id: " + docRef.id)
     } catch (error) {
         console.log(error)
     }
 } 
-export default addDataToFire

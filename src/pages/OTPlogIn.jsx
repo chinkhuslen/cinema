@@ -10,20 +10,26 @@ const OTPlogIn = () => {
     const inputValue = useRef(null);
     const [checkCodeSec,setCheckCodeSec] = useState(false);
     const {setUserEntered} = useUserDataContext();
+    const {setUserPhoneNumber,userPhoneNumber} = useUserDataContext();
     const navigate = useNavigate();
 
     const onButtonClick = async () =>{
-        
         if(checkCodeSec){
             const OTPCode = inputValue.current.value;
-            const status = await checkOTP(OTPCode)
-            console.log(status)
-            if(status){
-                setUserEntered(true);
-                navigate('/')
+            try {
+              const status = await checkOTP(OTPCode)
+              console.log(status);
+              if(status){
+                  setUserEntered(true);
+                  navigate('/')
+                  console.log(userPhoneNumber);
+              }
+            } catch (error) {
+              console.log(error)
             }
         }else{
             const phoneNumber = inputValue.current.value;
+            setUserPhoneNumber(phoneNumber);
             sendOTP(phoneNumber)
             setCheckCodeSec(true);
         }

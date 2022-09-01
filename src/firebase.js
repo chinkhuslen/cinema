@@ -18,7 +18,7 @@ const auth = getAuth();
 const db = getFirestore(app);
 
 
-// ------------------OTP avah heseg------------------------
+// ------------------Send OTP------------------------
 const generateRecaptcha = () => {
   window.recaptchaVerifier = new RecaptchaVerifier(
     'recaptcha-container',
@@ -48,21 +48,22 @@ export const sendOTP = async (enteredPhone) =>{
       });
 
 }
-// ------------------OTP shalgah heseg------------------------
+// ------------------Confirm OTP------------------------
 
 export const checkOTP = async (enteredCode) =>{
   let confirmationResult = window.confirmationResult;
-  confirmationResult.confirm(enteredCode).then((result)=>{
-    alert("success")
-    return true;
+  let status = false;
+  await confirmationResult.confirm(enteredCode).then((result)=>{
+    // alert("success");
+    status = true;
   })
   .catch((error)=> {
     console.log(error);
-    alert("fail")
-    return false;
+    // alert("fail")
   })
+  return status;
 }
-// ----------------------------zahialga nemeh----------------------------------------------------
+// ----------------------------add order to Firebase----------------------------------------------------
 export const addDataToFire = async (userData, ticketTime, ticketName, ticketNumber, ticketSeat) =>{
     try {
         const docRef = await addDoc(collection(db, 'users'),{
@@ -80,4 +81,19 @@ export const addDataToFire = async (userData, ticketTime, ticketName, ticketNumb
     } catch (error) {
         console.log(error)
     }
+} 
+//------------------------get Uset order from firebae-----------------------
+export const getUserOrders = async (phoneNumber) =>{
+  try {
+      const userRef = collection(db,'users');
+      const q = query (userRef, where("phone","==", phoneNumber));
+      const querySnapshot = await getDocs(q);
+      const userOrderData = [];
+      querySnapshot.forEach((doc) => {
+        userOrderData.push(doc.data());
+      });
+      return userOrderData;
+  } catch (error) {
+      console.log(error)
+  }
 } 

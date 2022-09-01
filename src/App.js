@@ -19,7 +19,6 @@ export default function App() {
           <div><h1>Chinkhuslen's Cinema</h1></div>
           <div className="navBtns">
           <Link to="/"><div>Эхлэл</div></Link>
-          <Link to="/BuyTicket"><div>Захиалах</div> </Link>
           <Link to="/"><div>Үнэ урамшуулал</div> </Link>
           {userEntered ? <Link to="/Profile"><div>Profile</div></Link>:<Link to="/LogIn"><div>Log-In</div></Link>}
           

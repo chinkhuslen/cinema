@@ -16,7 +16,7 @@ const Home = () => {
     }
     return (
         <div className="posterWrapper">
-            <div className="center"><h1>Дэлгэцнээ гарч буй кинонууд</h1></div>
+            <div className="center txtShadow"><h1>Дэлгэцнээ гарч буй кинонууд</h1></div>
             <div className="mainPosterArea">
                 {data.map((el) => {
                     return (

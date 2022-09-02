@@ -1,0 +1,16 @@
+body {
+  font: 100% Helvetica, sans-serif;
+}
+
+.posterWrapepr h1 {
+  color: white;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #47C2B1;
+  border: 1px solid #f0f0f0;
+  padding: 5px 10px;
+}
+
+/*# sourceMappingURL=scssStyle.css.map */

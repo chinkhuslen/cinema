@@ -8,6 +8,7 @@ import LogInPage from "./pages/LogIn";
 import SignUpPage from "./pages/SignUp";
 import OTPlogIn from "./pages/OTPlogIn";
 import Profile from "./pages/Profile";
+import "./scssStyle.css";
 
 export default function App() {
   const { userEntered } = useUserDataContext();
@@ -16,12 +17,11 @@ export default function App() {
     <Router>
       <div>
         <nav className="nav">
-          <div><h1>Chinkhuslen's Cinema</h1></div>
+          <div style={{marginLeft:20 + 'px'}}><h1>Chinkhuslen's Cinema</h1></div>
           <div className="navBtns">
           <Link to="/"><div>Эхлэл</div></Link>
           <Link to="/"><div>Үнэ урамшуулал</div> </Link>
           {userEntered ? <Link to="/Profile"><div>Profile</div></Link>:<Link to="/LogIn"><div>Log-In</div></Link>}
-          
           </div>
         </nav>
         <Routes>

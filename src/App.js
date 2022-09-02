@@ -17,7 +17,7 @@ export default function App() {
     <Router>
       <div>
         <nav className="nav">
-          <div style={{marginLeft:20 + 'px'}}><h1>Chinkhuslen's Cinema</h1></div>
+          <div className="logoName"><h1>Chinkhuslen's Cinema</h1></div>
           <div className="navBtns">
           <Link to="/"><div>Эхлэл</div></Link>
           <Link to="/"><div>Үнэ урамшуулал</div> </Link>

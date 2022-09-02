@@ -1,5 +1,21 @@
 $font-stack: Helvetica, sans-serif;
 $primary-color:#333;
+$colors:(
+    B200:#0084f8,
+    D400:#001b36,
+    White:#ffffff,
+    B100:#58c2f1,
+    R100:#ff8576,
+    G100:#47c2b1,
+    D100:#f0f5f9,
+    D200:#c9d6df,
+    D300:#52616b,
+);
+@each $key,$color in $colors {
+    .box-#{$key}{
+        background-color: $color
+    }
+}
 @import '_colorPalette.scss';
 body{
     font: 100% $font-stack;
@@ -10,7 +26,7 @@ body{
 @mixin movLenBtn (){
     border-radius: 5px;
     background-color: $success-color;
-    border: 1px solid $border-color;
+    border: 1px solid white;
     padding: 5px 10px;
 }
 button {@include movLenBtn()}; 

@@ -1,3 +1,39 @@
+.box-B200 {
+  background-color: #0084f8;
+}
+
+.box-D400 {
+  background-color: #001b36;
+}
+
+.box-White {
+  background-color: #ffffff;
+}
+
+.box-B100 {
+  background-color: #58c2f1;
+}
+
+.box-R100 {
+  background-color: #ff8576;
+}
+
+.box-G100 {
+  background-color: #47c2b1;
+}
+
+.box-D100 {
+  background-color: #f0f5f9;
+}
+
+.box-D200 {
+  background-color: #c9d6df;
+}
+
+.box-D300 {
+  background-color: #52616b;
+}
+
 body {
   font: 100% Helvetica, sans-serif;
 }
@@ -9,7 +45,7 @@ body {
 button {
   border-radius: 5px;
   background-color: #47C2B1;
-  border: 1px solid #f0f0f0;
+  border: 1px solid white;
   padding: 5px 10px;
 }
 

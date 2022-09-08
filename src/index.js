@@ -5,12 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ButtonProvider } from "./provider/contextButton";
 import { UserDataProvider } from "./provider/contextUserData";
+import {Stopwatch} from './stopwatch';
+import {PrimeNumberN} from './primeNumberN';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
      <ButtonProvider>
      <UserDataProvider>
     <App />
+    {/* <Stopwatch/> */}
+    {/* <PrimeNumberN/> */}
     </UserDataProvider>
      </ButtonProvider>
   </React.StrictMode>

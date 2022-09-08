@@ -265,3 +265,21 @@ margin-top: 10vh;
     bottom: 0;
     
 }
+.line{
+    width: 100%;
+    height: 1px;
+    border: 1px solid;
+}
+.stopWatchDisp{
+    padding: 5px 10px;
+}
+.stopWatch{
+    display: flex;
+    flex-direction: column;
+}
+.btnHover{
+    cursor: pointer;
+}
+.btnHover:hover{
+    background-color: cyan;
+}

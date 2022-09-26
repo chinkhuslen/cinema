@@ -82,7 +82,7 @@ export const addDataToFire = async (userData, ticketTime, ticketName, ticketNumb
         console.log(error)
     }
 } 
-//------------------------get Uset order from firebae-----------------------
+//------------------------get User order from firebae-----------------------
 export const getUserOrders = async (phoneNumber) =>{
   try {
       const userRef = collection(db,'users');
